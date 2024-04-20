@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+//归并操作的实现算法
+//将两个有序表合并成一个有序表 （从小到大）
+
+void MergeList_Sq(SqList La,SqList Lb,SqList &Lc){
+    Lc.length = La.length+Lb.length;    //为Lc分配存储区域
+    Lc.length = Lc.length;
+    Lc.elem = (ElemType*) malloc (Lc.length * sizeof(ElemType));
+    if(Lc.elem == NULL) exit (OVERFLOW);
+
+   for(i=0,j=0,k=0; i<La.length && j<Lb.length; k++){    //逐个比较
+        if(La.elem[i] < Lb.elem[j]){
+            Lc.elem[K] = La.elem[i]; i++;
+        }
+
+        else{
+                Lc.elem[K] = Lb.elem[j]; j++;
+            }
+        }
+        while(i<La.length){     //复制剩余部分
+            Lc.elem[K] = La.elem[i];    i++;  k++;
+        }
+
+        while(j<Lb.length){
+            LC.elem[k] = Lb.elem[j];    j++; k++;
+        }
+
+        }
+
+    算法如下：
+    1、创建表LC
+    2、表La 和 表Lb 的元素两两比较，将较小的元素存入Lb中，直到其中一个表比较完成
+    3、将两一个表的剩余元素存入Lc
+
+
+
+
+
+
+
+
+
